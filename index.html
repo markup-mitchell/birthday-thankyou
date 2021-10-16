@@ -4,9 +4,43 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		s://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Creepster&family=Eater&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			html {
+				background-color: black;
+			}
+			h1 {
+				font-family: 'Creepster', cursive;
+				font-family: 'Eater', cursive;
+				color: transparent;
+				color: #ffa100f7;
+				letter-spacing: 2px;
+				font-size: 3rem;
+				transition: all 3s ease-out;
+				text-align: center;
+			}
+		</style>
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Thanks for coming to my birthday!</h1>
+		<h1>Thanks for coming to my party!</h1>
+		<script>
+			const params = new URLSearchParams(window.location.search);
+			const name = params.get('name');
+			if (name) {
+				console.log(name);
+				document.querySelector(
+					'h1'
+				).innerText = `Thanks for coming to my party ${name}!`;
+				// document.querySelector('h1').style.color = '#ffa100;';
+			}
+		</script>
 	</body>
 </html>

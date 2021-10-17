@@ -13,6 +13,9 @@
 			rel="stylesheet"
 		/>
 		<style>
+			:root {
+				font-size: 8px;
+			}
 			html {
 				background-color: black;
 			}
@@ -20,36 +23,55 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				padding: 3rem;
 			}
 			h1 {
 				font-family: 'Creepster', cursive;
 				font-family: 'Eater', cursive;
 				color: transparent;
-				color: #ffa100f7;
-				letter-spacing: 2px;
-				font-size: 3rem;
-				transition: all 3s ease-out;
+
+				font-size: 4rem;
 				text-align: center;
 			}
 			img {
-				width: 60vw;
+				width: 100%;
+				max-width: 800px;
+			}
+
+			.fade-in {
+				animation: fade 3s forwards 3s 1;
+			}
+			@keyframes fade {
+				from {
+					color: transparent;
+				}
+				to {
+					color: #ffa100f7;
+				}
+			}
+			@media (min-width: 500px) {
+				h1 {
+					font-size: 6rem;
+				}
+				body {
+					padding: 5rem;
+				}
 			}
 		</style>
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Thanks for coming to my party!</h1>
+		<h1></h1>
 		<img src="./keir ghost.gif" alt="" />
 		<script>
 			const params = new URLSearchParams(window.location.search);
 			const name = params.get('name');
-			if (name) {
-				console.log(name);
-				document.querySelector(
-					'h1'
-				).innerText = `Thanks for coming to my party ${name}!`;
-				// document.querySelector('h1').style.color = '#ffa100;';
-			}
+			let message = name
+				? `Thanks for coming to my party ${name}!`
+				: `I don't know who you are?!`;
+			const header = document.querySelector('h1');
+			header.innerText = message;
+			header.classList.add('fade-in');
 		</script>
 	</body>
 </html>

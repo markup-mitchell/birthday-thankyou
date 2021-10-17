@@ -17,7 +17,7 @@
 				font-size: 8px;
 			}
 			html {
-				background-color: black;
+				background-color: #0f0028;
 			}
 			body {
 				display: flex;
@@ -33,9 +33,17 @@
 				font-size: 4rem;
 				text-align: center;
 			}
-			img {
+			.img {
 				width: 100%;
+				height: 450px;
 				max-width: 800px;
+				background-image: url('./keir\ ghost.gif');
+				background-size: contain;
+				background-repeat: no-repeat;
+				mask-image: url('https://pic.onlinewebfonts.com/svg/img_34605.svg');
+				mask-repeat: no-repeat;
+				mask-size: 120% 120%;
+				mask-position: top;
 			}
 
 			.fade-in {
@@ -62,7 +70,8 @@
 	</head>
 	<body>
 		<h1></h1>
-		<img src="./keir ghost.gif" alt="" />
+		<!-- <img src="./keir ghost.gif" alt="" /> -->
+		<div class="img"></div>
 		<script>
 			const params = new URLSearchParams(window.location.search);
 			const name = params.get('name');
